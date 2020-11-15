@@ -1,0 +1,25 @@
+.logo {
+    @include size(40px);
+    display: block;
+
+    &__icon {
+        @include size(100%);
+        color: #1A1A1A;
+    }
+}
+
+//Desktop
+@media (min-width: $mobile) {
+    .logo {
+        @include size(50px);
+        &__icon {
+            transition: all .3s;
+
+            &:hover {
+                color: #fff;
+                transform: scale(1.1);
+            }
+
+        }
+    }
+}

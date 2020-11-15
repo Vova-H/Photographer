@@ -1,0 +1,66 @@
+.scroll {
+    display: none;
+}
+
+
+//desktop
+
+@media (min-width: $mobile) {
+    .scroll {
+        display: block;
+        margin: 0 auto;
+        text-decoration: none;
+        color: #fff;
+        text-align: center;
+
+
+
+        &__icon {
+            @include size(30px);
+
+        }
+
+        &:hover .scroll__icon {
+            animation: bounce linear 0.8s;
+            animation-iteration-count: 1;
+        }
+
+        &__text {
+            display: block;
+            font: 300 1rem $font-title;
+        }
+
+    }
+}
+
+
+
+@keyframes bounce {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    15% {
+        transform: translate(0px, -25px);
+    }
+
+    30% {
+        transform: translate(0px, 0px);
+    }
+
+    45% {
+        transform: translate(0px, -15px);
+    }
+
+    60% {
+        transform: translate(0px, 0px);
+    }
+
+    75% {
+        transform: translate(0px, -5px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}

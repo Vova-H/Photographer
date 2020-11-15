@@ -1,0 +1,150 @@
+.menu {
+    position: relative;
+
+    &__toggle {
+        display: none;
+
+        &:checked {
+            +.menu__label {
+
+                .menu__line {
+                    display: none;
+                }
+
+                &::before {
+                    transform: rotate(45deg);
+                    top: 9px;
+                }
+
+                &::after {
+                    transform: rotate(-45deg);
+                    bottom: 9px;
+                }
+            }
+
+            ~.menu__wrap {
+                right: -20px;
+            }
+        }
+    }
+
+    &__label {
+        @include size(35px, 20px);
+        margin: auto;
+        @include pos(relative, $t: 10px, $z: 99);
+        display: block;
+
+        &::before,
+        &::after {
+            @include size(60%, 2px);
+            @include pos($r: 0);
+            content: '';
+            background: #000;
+            transition: all .2s;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 1px;
+        }
+    }
+
+    &__line {
+        @include size(90%, 2px);
+        @include pos(absolute, $l: 0, $t: 45%);
+        background: #000;
+    }
+
+
+    &__item {
+        margin-bottom: 15px;
+    }
+
+    &__link {
+        color: #1b1b1b;
+        text-decoration: none;
+        font-weight: 300;
+        font-size: 1.3rem;
+
+
+        &--active {
+            position: relative;
+
+            &::after {
+                @include size(7px);
+                @include pos($b: -6px, $l: 50%);
+                content: '';
+                background: #1b1b1b;
+                transform: translateX(-50%);
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &__lang {
+        margin: 7px 0 30px;
+    }
+
+
+
+    @media (min-width: $mobile-sm) and (max-width: $mobile) {
+        .menu {
+            &__wrap {
+                height: 100vh;
+            }
+        }
+    }
+
+    //MObile Landscape
+    @media (max-width: $mobile) {
+        .menu {
+            
+            &__wrap {
+                @include size(170px, 50vh);
+                @include pos($r: -190px, $t: -20px);
+                min-height: 200px;
+                background: #fff;
+                transition: all .3s;
+                padding: 25px 30px;
+                height: 100vh;
+            }
+        }
+    }
+
+    //desktop
+
+    @media (min-width: $mobile) {
+        .menu {
+            &__label {
+                display: none;
+            }
+
+            &__wrap {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: baseline;
+            }
+
+            &__list {
+                display: flex;
+                margin-right: 15px;
+            }
+
+            &__item{
+                margin-right: 20px;
+
+            }
+
+            &__link{
+                transition: all .3s ;
+
+                &:hover{
+                    text-shadow: 0 0 20px #000 ;
+                }
+            }
+        }
+    }
+}

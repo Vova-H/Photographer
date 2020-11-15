@@ -1,0 +1,38 @@
+.social {
+    display: none;
+}
+
+//desktop
+@media (min-width: $mobile) {
+    .social {
+        @include pos($b:15px, $r:20px);
+        display: block;
+
+        &__link {
+            &:hover {
+                .social__icon {
+                    fill: #1a1a1a;
+                    @include size(36px);
+                    margin: -3px;
+                }
+            }
+        }
+
+        &__icon {
+            @include size(30px);
+            fill: #fff;
+            transition: all .3s;
+
+        }
+
+        &__item {
+            margin-bottom: 15px;
+        }
+    }
+
+
+
+
+
+
+}

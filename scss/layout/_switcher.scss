@@ -1,0 +1,54 @@
+.lang {
+
+    display: flex;
+    
+
+    &__shortcut {
+        font-weight: 300;
+        font-size: 1.3rem;  
+    }
+
+    &__switcher {
+
+    }
+
+    &__field {
+        display: none;
+
+        &:checked + .lang__label::before{
+            left: 16px;
+        }
+    }
+
+    &__label {
+        display: block;
+        @include size(30px, 16px);
+        border: 1px solid #262626;
+        border-radius: 20px;
+        position: relative;
+        margin:0 5px;
+
+
+
+        &::before{
+            @include size(11px);
+            @include pos($t:1px, $l:1px);
+            content: '';
+            background: #1b1b1b;
+            border-radius: 50%;
+            transition: all .3s;
+
+        }
+
+
+
+    }
+}
+//desktop
+@media (min-width: $mobile){
+    .lang{
+        &__label{
+            cursor: pointer;
+        }
+    }
+}

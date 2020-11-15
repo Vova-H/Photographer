@@ -1,0 +1,33 @@
+.button {
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: #1b1b1b;
+    text-decoration: none;
+    background: #fff;
+    border-radius: 35px;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 30px;
+    position: relative;
+
+    &::before {
+        @include size(calc(100% + 8px));
+        @include pos(absolute, $l: -4px, $t: -4px);
+        content: '';
+        border: 2px solid #fff;
+        border-radius: 35px;
+    }
+
+    &--large {
+        width: 185px;
+    }
+
+    &--dark{
+        background: #1b1b1b;
+        color: #fff;
+        &::before{
+            border-color: #1b1b1b;
+        }
+
+    }
+}

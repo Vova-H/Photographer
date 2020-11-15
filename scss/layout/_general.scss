@@ -1,0 +1,33 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	outline: none;
+	box-sizing: border-box;
+}
+
+
+html {
+	height: 100%;
+	scroll-behavior: smooth;
+	font-size: 16px;
+}
+
+body,
+html {
+	min-height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: $font;
+	color: #1b1b1b;
+}
+
+.wrap {
+	margin: 0 auto;
+	@media (min-width: 1200px){
+		max-width: 1140px;
+	}
+	
+}
