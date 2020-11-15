@@ -2,9 +2,7 @@
     display: none;
 }
 
-
-//desktop
-
+// Desktop Version
 @media (min-width: $mobile) {
     .scroll {
         display: block;
@@ -13,11 +11,8 @@
         color: #fff;
         text-align: center;
 
-
-
         &__icon {
             @include size(30px);
-
         }
 
         &:hover .scroll__icon {
@@ -29,38 +24,32 @@
             display: block;
             font: 300 1rem $font-title;
         }
-
     }
 }
 
 
-
-@keyframes bounce {
+@keyframes bounce{
     0% {
-        transform: translate(0px, 0px);
+      transform:  translate(0px,0px)  ;
     }
-
     15% {
-        transform: translate(0px, -25px);
+      transform:  translate(0px,-25px)  ;
     }
-
     30% {
-        transform: translate(0px, 0px);
+      transform:  translate(0px,0px)  ;
     }
-
     45% {
-        transform: translate(0px, -15px);
+      transform:  translate(0px,-15px)  ;
     }
-
     60% {
-        transform: translate(0px, 0px);
+      transform:  translate(0px,0px)  ;
     }
-
     75% {
-        transform: translate(0px, -5px);
+      transform:  translate(0px,-5px)  ;
     }
-
     100% {
-        transform: translate(0px, 0px);
+      transform:  translate(0px,0px)  ;
     }
-}
+  }
+  
+  

@@ -2,16 +2,20 @@
     display: none;
 }
 
-//desktop
+// Desktop Version
 @media (min-width: $mobile) {
     .social {
-        @include pos($b:15px, $r:20px);
+        @include pos($b: 15px, $r: 20px);
         display: block;
+
+        &__item {
+            margin-bottom: 15px;
+        }
 
         &__link {
             &:hover {
                 .social__icon {
-                    fill: #1a1a1a;
+                    fill: #1A1A1A;
                     @include size(36px);
                     margin: -3px;
                 }
@@ -22,17 +26,7 @@
             @include size(30px);
             fill: #fff;
             transition: all .3s;
-
         }
 
-        &__item {
-            margin-bottom: 15px;
-        }
     }
-
-
-
-
-
-
 }

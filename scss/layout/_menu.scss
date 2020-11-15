@@ -5,7 +5,7 @@
         display: none;
 
         &:checked {
-            +.menu__label {
+            + .menu__label {
 
                 .menu__line {
                     display: none;
@@ -22,7 +22,7 @@
                 }
             }
 
-            ~.menu__wrap {
+            ~ .menu__wrap {
                 right: -20px;
             }
         }
@@ -30,7 +30,6 @@
 
     &__label {
         @include size(35px, 20px);
-        margin: auto;
         @include pos(relative, $t: 10px, $z: 99);
         display: block;
 
@@ -58,7 +57,6 @@
         background: #000;
     }
 
-
     &__item {
         margin-bottom: 15px;
     }
@@ -68,7 +66,6 @@
         text-decoration: none;
         font-weight: 300;
         font-size: 1.3rem;
-
 
         &--active {
             position: relative;
@@ -87,63 +84,58 @@
     &__lang {
         margin: 7px 0 30px;
     }
+}
 
-
-
-    @media (min-width: $mobile-sm) and (max-width: $mobile) {
-        .menu {
-            &__wrap {
-                height: 100vh;
-            }
+// Mobile Version
+@media (max-width: $mobile) {
+    .menu {
+        &__wrap {
+            @include size(170px, 50vh);
+            @include pos($r: -190px, $t: -20px);
+            min-height: 200px;
+            background: #fff;
+            transition: all .3s;
+            padding: 25px 30px;
         }
     }
+}
 
-    //MObile Landscape
-    @media (max-width: $mobile) {
-        .menu {
-            
-            &__wrap {
-                @include size(170px, 50vh);
-                @include pos($r: -190px, $t: -20px);
-                min-height: 200px;
-                background: #fff;
-                transition: all .3s;
-                padding: 25px 30px;
-                height: 100vh;
-            }
+// Mobile Landscape Version
+@media (min-width: $mobile-sm) and (max-width: $mobile) {
+    .menu {
+        &__wrap {
+            height: 100vh;
         }
     }
+}
 
-    //desktop
+// Desktop Version
+@media (min-width: $mobile) {
+    .menu {
+        &__label {
+            display: none;
+        }
 
-    @media (min-width: $mobile) {
-        .menu {
-            &__label {
-                display: none;
-            }
+        &__wrap {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: baseline;
+        }
 
-            &__wrap {
-                display: flex;
-                flex-direction: row-reverse;
-                align-items: baseline;
-            }
+        &__list {
+            display: flex;
+            margin-right: 15px;
+        }
 
-            &__list {
-                display: flex;
-                margin-right: 15px;
-            }
+        &__item {
+            margin-right: 20px;
+        }
 
-            &__item{
-                margin-right: 20px;
+        &__link {
+            transition: all .3s;
 
-            }
-
-            &__link{
-                transition: all .3s ;
-
-                &:hover{
-                    text-shadow: 0 0 20px #000 ;
-                }
+            &:hover {
+                text-shadow: 0 0 20px #000;
             }
         }
     }

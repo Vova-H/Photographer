@@ -47,19 +47,19 @@
     }
 }
 
-//desktop
+// Desktop Version
 @media (min-width: $mobile) {
     .header {
         background-image: url('../images/header.jpg');
 
         &__title {
             font-size: 3.8rem;
-            text-align: left;
             line-height: 3.8rem;
+            text-align: left;
             margin-bottom: 15vh;
         }
 
-        &__info{
+        &__info {
             margin: 0;
         }
 
@@ -68,30 +68,27 @@
             line-height: 3rem;
         }
 
-        &__text{
+        &__text {
             font-size: 1.5rem;
             line-height: 1.9rem;
             margin-right: 65%;
         }
 
-
-        &__btn{
+        &__btn {
             text-align: left;
             margin-bottom: 15vh;
         }
 
-        &__wrap{
+        &__wrap {
             padding-bottom: 10px;
             position: relative;
         }
-
     }
 }
 
-//mobile landscape
+// Mobile landscape Version
 @media (min-width: $mobile-sm) and (max-width: $mobile) {
     .header {
-        background-position: center center;
         background-image: url('../images/header-tablet.jpg');
 
         &__info {
@@ -102,5 +99,4 @@
             margin-right: 0;
         }
     }
-
 }
